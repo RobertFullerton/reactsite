@@ -8,7 +8,7 @@ import { Switch, Route, Redirect, withRouter  } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Contact from './ContactComponent';
 import About from './Aboutus';
-import { addComment,fetchCampsites, postComment, postFeedback, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
+import {fetchCampsites, postComment, postFeedback, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
@@ -66,7 +66,7 @@ class Main extends Component {
               errMess={this.props.campsites.errMess}
               comments={this.props.comments.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
               commentsErrMess={this.props.comments.errMess}
-              addComment={this.props.addComment}
+              postComment={this.props.postComment}
               />
           );
       };
