@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 
 function RenderDirectoryItem({campsite}) {
     return (
         <Card>
-            <CardImg width="100%" src={campsite.image} alt={campsite.name} />
+        <CardImg width="100%" src={baseUrl + campsite.image} alt={campsite.name} />
                 <CardImgOverlay>
                     <CardTitle>{campsite.name}</CardTitle>
                 </CardImgOverlay>
